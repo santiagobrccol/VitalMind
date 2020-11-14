@@ -6,6 +6,10 @@ const pathsUser = require('./components/users/paths_users')
 const pathsQuestion = require('./components/questions/paths_questions')
 const pathsAnswer = require('./components/answers/paths_answers')
 const User = require('./components/users/model_users')
+const config = require('./config')
+
+//other way to import heroku
+//const {PORT} = require('./config')
 
 require('./data_base');
 
@@ -36,6 +40,6 @@ app.post('/token',  (request, response) => {
 
 })
 
-app.listen(3000, () =>{
+app.listen(config.PORT, () =>{
     console.log('Server online')
 }); 

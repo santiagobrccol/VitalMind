@@ -14,7 +14,7 @@ router.get('/', (request, response) => {
 })
 
 
-router.get('/:id', (request, response) =>{
+router.get('/:id', (request, response) => {
     Question.findById( request.params.id, /**PROYECCION*/ (error, question) => {
         if (error !== null) {
             response.status(500).send(error)
