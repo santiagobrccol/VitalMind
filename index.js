@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const pathsCounter = require('./components/counters/paths_counters');
 const pathsUser = require('./components/users/paths_users')
 const pathsQuestion = require('./components/questions/paths_questions')
@@ -14,6 +15,7 @@ const config = require('./config')
 require('./data_base');
 
 
+app.use(cors());
 //const token =require('./tokens')
 //Middleware to read data in JSON 
 app.use(bodyParser.json());

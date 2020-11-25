@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('./model_users')
+const {createJwtToken} = require('../../assets/tokens')
 //const multer = require('multer')
 //const middlePublic = multer({dest: 'public/'})
 
@@ -86,6 +87,22 @@ router.delete('/:id', (request, response) => {
             response.status(500).send(error)
         } else {
             response.status(204).send(userDeleted)
+        }
+    })
+})
+
+router.post('/authentication', (request, response) => {
+    User.findOne({
+        email: request.body.email,
+        password: request.body.password
+    }, (error, user) =>{
+        if (error) {
+            response.status(500).send(error)
+        } else if (user) {
+            const token = createJwtToken(user)
+            response.send({jwt: token})
+        } else {
+            response.status(401).send({error: 'Email or passwor invalid'})
         }
     })
 })
