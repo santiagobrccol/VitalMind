@@ -77,7 +77,7 @@ router.put('/:id', (request, response ) => {
 
 /**
  * Path to delete/eliminate a Usre from the Data Base
- * PUT /users/:id
+ * Delte /users/:id
  * @return Object User deleted
  */
 

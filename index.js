@@ -6,6 +6,7 @@ const pathsCounter = require('./components/counters/paths_counters');
 const pathsUser = require('./components/users/paths_users')
 const pathsQuestion = require('./components/questions/paths_questions')
 const pathsAnswer = require('./components/answers/paths_answers')
+const pathsQuestionnaire = require('./components/questionnaire/paths_questionnaire')
 const User = require('./components/users/model_users')
 const config = require('./config')
 
@@ -24,6 +25,7 @@ app.use('/counter', pathsCounter);
 app.use('/user', pathsUser )
 app.use('/question', pathsQuestion)
 app.use('/answer', pathsAnswer)
+app.use('/questionnaire', pathsQuestionnaire)
 
 //app.use('/public', express.static('public'))
 

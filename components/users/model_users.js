@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
     email: String,
     dateOfBirth: Date,
     password: String,
-    answers_q: Array
+    answers_q: Array,
+    level: Number
 });
 
 const User = mongoose.model('users',  userSchema);
