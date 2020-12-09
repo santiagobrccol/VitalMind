@@ -102,7 +102,7 @@ router.post('/authentication', (request, response) => {
             const token = createJwtToken(user)
             response.send({jwt: token})
         } else {
-            response.status(401).send({error: 'Email or passwor invalid'})
+            response.status(401).send({ jwt: '', message: 'Email or passwor invalid'})
         }
     })
 })
