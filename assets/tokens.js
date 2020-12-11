@@ -6,7 +6,9 @@ const createJwtToken = (user) => {
     const payload = {
         id: user._id,
         name: user.name,
-        email: user.email
+        userName: user.userName,
+        email: user.email,
+        level: user.level
     };
 
     return jwt.encode(payload, SECRET);
